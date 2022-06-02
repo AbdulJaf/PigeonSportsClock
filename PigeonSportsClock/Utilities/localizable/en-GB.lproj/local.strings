@@ -1,0 +1,11 @@
+/* 
+  local.strings
+  PigeonSportsClock
+
+  Created by Anand on 24/03/22.
+  
+*/
+"AlreadyRegistered" = "Actual Name";
+"Signin" = "Swift";
+"register" = "Merging register";
+"signup" = "System";

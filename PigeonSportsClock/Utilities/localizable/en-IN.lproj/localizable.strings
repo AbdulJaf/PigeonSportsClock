@@ -1,0 +1,10 @@
+/* 
+  localizable.strings
+  PigeonSportsClock
+
+  Created by Anand on 18/03/22.
+  
+*/
+
+"AlreadyRegistered" = "Hi";
+"Signin" = "Hello";
