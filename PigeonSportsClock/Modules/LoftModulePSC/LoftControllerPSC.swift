@@ -140,13 +140,13 @@ class LoftControllerPSC: UIViewController,UIImagePickerControllerDelegate,UINavi
                         }else{
                             hideLoading()
                             if let msg = json["message"] as? String{
-//                                if msg == "registered successfully"{
-//                                    let storyboard:UIStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
-//                                    let vc = storyboard.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
-//                                    vc.navigationController?.isNavigationBarHidden = false
-//                                    self.navigationController?.pushViewController(vc, animated: true)
+                                //                                if msg == "registered successfully"{
+                                //                                    let storyboard:UIStoryboard = UIStoryboard(name: "OnBoard", bundle: nil)
+                                //                                    let vc = storyboard.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
+                                //                                    vc.navigationController?.isNavigationBarHidden = false
+                                //                                    self.navigationController?.pushViewController(vc, animated: true)
 
-                              //  }
+                                //  }
                                 self.showAlert(msg: msg)
                             }
                         }
@@ -201,6 +201,7 @@ extension LoftControllerPSC: CLLocationManagerDelegate{
             btnRetake.isHidden = false
             lblRetake.isHidden = false
             btnSubmit.isHidden = false
+
 
         }
     }
