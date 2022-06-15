@@ -89,7 +89,7 @@ extension UIViewController{
         //        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
         //            self.openGallery(imgPicker: imgPicker)
         //        }))
-        
+
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         
         switch UIDevice.current.userInterfaceIdiom {
@@ -121,6 +121,54 @@ extension UIViewController{
         self.present(imgPicker, animated: true, completion: nil)
     }
 }
+
+
+
+extension UIViewController {
+
+
+        func profileImage(sender:Any,imgPicker:UIImagePickerController){
+            let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                self.openCamera(imgPicker: imgPicker)
+            }))
+
+                    alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                        self.openGallery(imgPicker: imgPicker)
+                    }))
+
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                alert.popoverPresentationController?.sourceView = sender as? UIView
+                alert.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
+                alert.popoverPresentationController?.permittedArrowDirections = .up
+            default:
+                break
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
+
+
+
+        func cameraOpen(imgPicker:UIImagePickerController){
+            if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
+                imgPicker.sourceType = UIImagePickerController.SourceType.camera
+                imgPicker.allowsEditing = true
+                self.present(imgPicker, animated: true, completion: nil)
+            }else{
+
+                showAlert(msg: "You don't have camera")
+            }
+        }
+        func GalleryOpen(imgPicker:UIImagePickerController){
+            imgPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imgPicker.allowsEditing = true
+            self.present(imgPicker, animated: true, completion: nil)
+        }
+    }
+
 
 extension UIViewController {
     

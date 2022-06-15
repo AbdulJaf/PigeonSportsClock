@@ -9,12 +9,10 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+import Alamofire
 
 
 class LoftControllerPSC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,getClubID {
-
-
-
 
     @IBOutlet weak var lblLongitude: UILabel!
     @IBOutlet weak var btnSubmit: UIButton!
@@ -110,7 +108,6 @@ class LoftControllerPSC: UIViewController,UIImagePickerControllerDelegate,UINavi
         } catch let error {
             print(error.localizedDescription)
         }
-
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
 
@@ -160,7 +157,6 @@ class LoftControllerPSC: UIViewController,UIImagePickerControllerDelegate,UINavi
         task.resume()
 
     }
-
 
 }
 /* Location Common Method */

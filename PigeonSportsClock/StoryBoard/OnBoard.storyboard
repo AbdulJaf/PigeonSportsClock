@@ -2056,7 +2056,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-6f-xxA">
-                                <rect key="frame" x="15" y="274" width="345" height="66.5"/>
+                                <rect key="frame" x="15" y="274" width="345" height="72"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Your subscription expires ">
                                         <attributes>
@@ -2081,7 +2081,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-peace-pigeon-96" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-GX-eqI">
-                                <rect key="frame" x="87.5" y="390.5" width="200" height="120"/>
+                                <rect key="frame" x="87.5" y="396" width="200" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="CP7-jc-dIz"/>
                                     <constraint firstAttribute="height" constant="120" id="hSw-oC-6nU"/>
@@ -2109,15 +2109,15 @@ Cg
             </objects>
             <point key="canvasLocation" x="7660" y="704.79760119940033"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile ControllerPSC-->
         <scene sceneID="8C3-qt-WQr">
             <objects>
-                <viewController id="WqD-e4-U42" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileControllerPSC" id="WqD-e4-U42" customClass="ProfileControllerPSC" customModule="PigeonSportsClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zUf-Sm-ndZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-A8-mg4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-img" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-A8-mg4">
                                 <rect key="frame" x="127.5" y="74" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="18u-gG-I0C"/>
@@ -2239,6 +2239,9 @@ Cg
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="UPDATE"/>
+                                <connections>
+                                    <action selector="onClkUpdate:" destination="WqD-e4-U42" eventType="touchUpInside" id="HxO-D9-4p3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6i-Eq-bOx">
                                 <rect key="frame" x="127.5" y="74" width="120" height="120"/>
@@ -2247,6 +2250,9 @@ Cg
                                     <constraint firstAttribute="width" constant="120" id="aV4-xs-qi5"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="onClkProfile:" destination="WqD-e4-U42" eventType="touchUpInside" id="gva-rC-h4c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dt7-3Y-7kG"/>
@@ -2264,6 +2270,14 @@ Cg
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnProfile" destination="G6i-Eq-bOx" id="r4G-fm-GtK"/>
+                        <outlet property="btnUpdate" destination="a7d-Oc-JMa" id="YRi-5M-dC6"/>
+                        <outlet property="clubName" destination="BwD-8L-vZb" id="4EB-lv-hZm"/>
+                        <outlet property="fancierNme" destination="Aq8-l6-asB" id="YbN-eb-oYq"/>
+                        <outlet property="imgProfile" destination="jGj-A8-mg4" id="fmk-qL-KZz"/>
+                        <outlet property="phNmbr" destination="9L1-ae-3PV" id="p5g-Kf-v05"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UE-wU-GlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2343,6 +2357,7 @@ Cg
         <image name="icons8-sent-50" width="50" height="50"/>
         <image name="img" width="122.5" height="78"/>
         <image name="menu" width="35.5" height="22.5"/>
+        <image name="profile-img" width="42" height="42"/>
         <image name="signin-bg" width="360" height="296.5"/>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

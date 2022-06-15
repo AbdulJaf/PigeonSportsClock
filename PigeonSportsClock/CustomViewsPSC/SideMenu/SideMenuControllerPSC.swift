@@ -36,12 +36,20 @@ class SideMenuControllerPSC: UIViewController {
         super.viewWillDisappear(animated)
     }
 
+    @IBAction func onclkProfile(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "OnBoard", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileControllerPSC") as! ProfileControllerPSC
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+
+    }
 
     @IBAction func onClkLogout(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "OnBoard", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignincontollerPSC") as! SignincontollerPSC
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
+
+
 }
 
 extension SideMenuControllerPSC: UITableViewDelegate,UITableViewDataSource  {

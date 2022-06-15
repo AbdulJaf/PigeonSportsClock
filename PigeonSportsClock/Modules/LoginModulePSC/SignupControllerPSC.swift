@@ -222,10 +222,6 @@ class SignupControllerPSC: UIViewController, getClubName,UITextFieldDelegate {
     }
 }
 
-
-
-
-
 extension SignupControllerPSC {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {

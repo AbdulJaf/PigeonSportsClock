@@ -23,17 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-
-      
-
-
-
-//        let left = UIStoryboard(name: "Storyboard", bundle: nil).instantiateInitialViewController()
-//        let center = UIStoryboard(name: "OnBoard", bundle: nil).instantiateInitialViewController()!
-        
-      //  let drawer = DrawerMenu(center: center, left: left)
-       // drawer.style = Overlay()
-       // window?.rootViewController = drawer
         window?.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
         
@@ -41,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
         
     }
-    
     
     // MARK: UISceneSession Lifecycle
     
