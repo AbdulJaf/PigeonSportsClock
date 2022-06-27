@@ -61,7 +61,6 @@ class LoftControllerPSC: UIViewController,UIImagePickerControllerDelegate,UINavi
         vwGoogleMap.settings.myLocationButton = true
         btnRetake.isHidden = true
         lblRetake.isHidden = true
-
         imagePicker.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

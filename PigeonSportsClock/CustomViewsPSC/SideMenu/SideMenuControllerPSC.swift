@@ -11,6 +11,9 @@ class SideMenuControllerPSC: UIViewController {
 
     @IBOutlet weak var tblMenuList: UITableView!
     @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var lblFancierNme: UILabel!
+    @IBOutlet weak var imgProfile: UIButton!
+
     static let NibName = "SideMenuControllerPSC"
     var defaultHighlightedCell: Int = 0
 
@@ -24,6 +27,9 @@ class SideMenuControllerPSC: UIViewController {
         tblMenuList?.dataSource = self
         tblMenuList?.separatorStyle = .none
         tblMenuList?.register(UINib(nibName: "SideMenuPSCTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuPSCTableViewCell")
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -5,9 +5,10 @@
 //  Created by Anand on 14/06/22.
 //
 
+
 import UIKit
 
-class ProfileControllerPSC: UIViewController {
+class ProfileControllerPSC: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
     @IBOutlet weak var imgProfile: UIImageView!
@@ -19,21 +20,22 @@ class ProfileControllerPSC: UIViewController {
 
 
     var imagePicker = UIImagePickerController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btnUpdate.layer.masksToBounds = true
         btnUpdate.layer.cornerRadius = 20
+        imagePicker.delegate = self
+        imgProfile.layer.borderWidth = 2
+        imgProfile.layer.borderColor = UIColor.black.cgColor
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.height/2
+        imgProfile.clipsToBounds = true
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func onClkProfile(_ sender: Any) {
     profileImage(sender: sender, imgPicker: imagePicker)
     }
-
-
-
 
     func validatetextfield() -> Bool{
         var isValideInput = false
@@ -55,19 +57,24 @@ class ProfileControllerPSC: UIViewController {
 
         return isValideInput
     }
-    
 
     @IBAction func onClkUpdate(_ sender: Any) {
 
         if  validatetextfield() == false {
-
-           // showAlert(msg: "Profile updated successfully")
-
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "OnBoard", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//            self.navigationController?.pushViewController(nextViewController, animated: true)
-
+            
+//      showAlert(msg: "Profile updated successfully")
+//
+//      let storyBoard : UIStoryboard = UIStoryboard(name: "OnBoard", bundle:nil)
+//      let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!      HomeViewController
+//      self.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        imgProfile.image = image
+    }
 }
